@@ -1,4 +1,7 @@
 import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import AllCountries from "./components/AllCountries/AllCountries";
+import CountryInfo from "./components/CountryInfo/CountryInfo";
 
 function App() {
   return (
@@ -7,6 +10,12 @@ function App() {
         <div className="container">
           <h5>All The Countries</h5>
         </div>
+      </div>
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<AllCountries />} />
+          <Route path="/country/:countryName" element={<CountryInfo />} />
+        </Routes>
       </div>
     </>
   );
