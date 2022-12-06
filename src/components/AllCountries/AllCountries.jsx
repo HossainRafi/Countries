@@ -64,37 +64,39 @@ const AllCountries = () => {
   }, []);
 
   return (
-    <div className="all__country__wrapper">
-      <div className="country__top">
-        <div className="search">
+    <div>
+      <div className="flex justify-between py-8">
+        <div>
           <SearchInput onSearch={getCountryByName} />
         </div>
 
-        <div className="filter">
+        <div>
           <FilterCountry onSelect={getCountryByRegion} />
         </div>
       </div>
 
-      <div className="country__bottom">
+      <div className="grid grid-cols-4 gap-5 justify-evenly">
         {isLoading && !error && <h4>Loading........</h4>}
         {error && !isLoading && <h4>{error}</h4>}
-
         {countries?.map((country) => (
           <Link to={`/country/${country.name.common}`}>
-            <div className="country__card">
-              <div className="country__img">
-                <img src={country.flags.png} alt="" />
-              </div>
-
-              <div className="country__data">
-                <h3>{country.name.common}</h3>
-                <h6>
-                  {" "}
+            <div className="bg-violet-300 p-3 rounded-md text-center">
+              <img className="h-40 rounded-md" src={country.flags.png} alt="" />
+              <div className="p-2">
+                <h3 className="text-2xl font-medium pb-2 ">
+                  {country.name.common}
+                </h3>
+                <h6 className="font-medium text-gray-800">
                   Population:{" "}
                   {new Intl.NumberFormat().format(country.population)}
                 </h6>
-                <h6> Region: {country.region}</h6>
-                <h6>Capital: {country.capital}</h6>
+                <h6 className="py-2 font-medium text-gray-800">
+                  {" "}
+                  Region: {country.region}
+                </h6>
+                <h6 className="font-medium text-gray-800">
+                  Capital: {country.capital}
+                </h6>
               </div>
             </div>
           </Link>
