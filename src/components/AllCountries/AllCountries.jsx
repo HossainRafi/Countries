@@ -75,26 +75,30 @@ const AllCountries = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-4 gap-5 justify-evenly">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 justify-evenly">
         {isLoading && !error && <h4>Loading........</h4>}
         {error && !isLoading && <h4>{error}</h4>}
         {countries?.map((country) => (
           <Link to={`/country/${country.name.common}`}>
-            <div className="bg-violet-300 p-3 rounded-md text-center">
-              <img className="h-40 rounded-md" src={country.flags.png} alt="" />
-              <div className="p-2">
-                <h3 className="text-2xl font-medium pb-2 ">
+            <div className="bg-slate-700 rounded-md text-center hover:scale-105 duration-500">
+              <img
+                className="h-40 w-full rounded-t-md"
+                src={country.flags.png}
+                alt=""
+              />
+              <div className="p-3">
+                <h3 className="text-2xl font-medium pb-3 ">
                   {country.name.common}
                 </h3>
-                <h6 className="font-medium text-gray-800">
+                <h6 className="font-medium text-gray-400">
                   Population:{" "}
                   {new Intl.NumberFormat().format(country.population)}
                 </h6>
-                <h6 className="py-2 font-medium text-gray-800">
+                <h6 className="py-2 font-medium text-gray-400">
                   {" "}
                   Region: {country.region}
                 </h6>
-                <h6 className="font-medium text-gray-800">
+                <h6 className="font-medium text-gray-400">
                   Capital: {country.capital}
                 </h6>
               </div>
