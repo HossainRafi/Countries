@@ -45,29 +45,28 @@ const CountryInfo = () => {
       {error && !isLoading && { error }}
 
       {country?.map((country, index) => (
-        <div key={index} className="py-10">
+        <div key={index} className="flex gap-10 py-10">
+          <img className="w-2/4" src={country.flags.png} alt="" />
           <div>
-            <img src={country.flags.png} alt="" />
-          </div>
-
-          <div>
-            <h3>{country.name.common}</h3>
-
-            <div>
-              <h5>
+            <div className="">
+              <h3 className="text-5xl font-bold py-2  text-gray-200">
+                {country.name.common}
+              </h3>
+              <h5 className="text-3xl font-semibold py-2 text-gray-400">
                 Population:{" "}
-                <span>
+                <span className="font-normal">
                   {new Intl.NumberFormat().format(country.population)}
                 </span>
               </h5>
-              <h5>
-                Region: <span>{country.region}</span>
+              <h5 className="text-3xl font-semibold py-2 text-gray-400">
+                Region: <span className="font-normal">{country.region}</span>
               </h5>
-              <h5>
-                Sub Region: <span>{country.subregion}</span>
+              <h5 className="text-3xl font-semibold py-2 text-gray-400">
+                Sub Region:{" "}
+                <span className="font-normal">{country.subregion}</span>
               </h5>
-              <h5>
-                Capital: <span>{country.capital}</span>
+              <h5 className="text-3xl font-semibold py-2 text-gray-400">
+                Capital: <span className="font-normal">{country.capital}</span>
               </h5>
             </div>
           </div>
