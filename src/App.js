@@ -1,23 +1,20 @@
-import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import AllCountries from "./components/AllCountries/AllCountries";
 import CountryInfo from "./components/CountryInfo/CountryInfo";
 
 function App() {
   return (
-    <>
-      <div className="header">
-        <div className="container">
-          <h5>All The Countries</h5>
-        </div>
+    <div className="bg-slate-800">
+      <div className="bg-slate-900">
+        <h5 className="text-white text-4xl font-bold p-3">
+          All The Countries
+        </h5>
       </div>
-      <div className="container">
-        <Routes>
-          <Route path="/" element={<AllCountries />} />
-          <Route path="/country/:countryName" element={<CountryInfo />} />
-        </Routes>
-      </div>
-    </>
+      <Routes>
+        <Route path="/" element={<AllCountries />} />
+        <Route path="/country/:countryName" element={<CountryInfo />} />
+      </Routes>
+    </div>
   );
 }
 
