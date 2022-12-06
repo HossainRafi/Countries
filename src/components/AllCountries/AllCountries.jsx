@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { apiURL } from "../../util/api";
+import { Link } from "react-router-dom";
 
 const AllCountries = () => {
   const [countries, setCountries] = useState([]);
@@ -29,7 +30,35 @@ const AllCountries = () => {
     getAllCountries();
   }, []);
 
-  return <div className="all__country__wrapper"></div>;
+  return (
+    <div className="all__country__wrapper">
+      <div className="country__bottom">
+        {isLoading && !error && <h4>Loading........</h4>}
+        {error && !isLoading && <h4>{error}</h4>}
+
+        {countries?.map((country) => (
+          <Link to={`/country/${country.name.common}`}>
+            <div className="country__card">
+              <div className="country__img">
+                <img src={country.flags.png} alt="" />
+              </div>
+
+              <div className="country__data">
+                <h3>{country.name.common}</h3>
+                <h6>
+                  {" "}
+                  Population:{" "}
+                  {new Intl.NumberFormat().format(country.population)}
+                </h6>
+                <h6> Region: {country.region}</h6>
+                <h6>Capital: {country.capital}</h6>
+              </div>
+            </div>
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default AllCountries;
