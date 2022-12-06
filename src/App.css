@@ -98,3 +98,21 @@ input {
 ::placeholder {
   color: #c1c1c1;
 }
+
+.country__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+select {
+  padding: 10px 25px;
+  background: #2b3945;
+  margin-bottom: 50px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: #c1c1c1;
+  cursor: pointer;
+}
