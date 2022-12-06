@@ -6,14 +6,14 @@ function App() {
   return (
     <div className="bg-slate-800">
       <div className="bg-slate-900">
-        <h5 className="text-white text-4xl font-bold p-3">
-          All The Countries
-        </h5>
+        <h5 className="text-white text-3xl md:text-4xl font-semibold text-center py-4">Countries</h5>
       </div>
-      <Routes>
-        <Route path="/" element={<AllCountries />} />
-        <Route path="/country/:countryName" element={<CountryInfo />} />
-      </Routes>
+      <div className="px-16 py-8">
+        <Routes>
+          <Route path="/" element={<AllCountries />} />
+          <Route path="/country/:countryName" element={<CountryInfo />} />
+        </Routes>
+      </div>
     </div>
   );
 }
