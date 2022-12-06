@@ -117,3 +117,28 @@ select {
   cursor: pointer;
 }
 
+.country__info__wrapper {
+  margin-top: 120px;
+}
+
+.country__info__container {
+  display: flex;
+  column-gap: 1rem;
+}
+
+.country__info-img,
+.country__info {
+  width: 50%;
+}
+
+button {
+  padding: 10px 25px;
+  color: #fff;
+  background: #2b3945;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 120px;
+  border-radius: 5px;
+  margin-bottom: 50px;
+}
