@@ -87,18 +87,14 @@ const AllCountries = () => {
                 alt=""
               />
               <div className="p-3">
-                <h3 className="text-2xl font-medium pb-3 ">
+                <h3 className="text-2xl font-medium pb-3 uppercase">
                   {country.name.common}
                 </h3>
-                <h6 className="font-medium text-gray-400">
+                <h6 className="pb-3 font-medium text-gray-400">
                   Population:{" "}
                   {new Intl.NumberFormat().format(country.population)}
                 </h6>
-                <h6 className="py-2 font-medium text-gray-400">
-                  {" "}
-                  Region: {country.region}
-                </h6>
-                <h6 className="font-medium text-gray-400">
+                <h6 className="pb-2 font-medium text-gray-400">
                   Capital: {country.capital}
                 </h6>
               </div>
