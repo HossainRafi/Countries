@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { apiURL } from "../../util/api";
 import { Link } from "react-router-dom";
+import { ImArrowLeft } from "react-icons/im";
 
 const CountryInfo = () => {
   const [country, setCountry] = useState([]);
@@ -33,16 +34,18 @@ const CountryInfo = () => {
   }, [countryName]);
 
   return (
-    <div>
-      <button>
-        <Link to="/">Back</Link>
+    <div className="h-screen pt-10">
+      <button className="bg-slate-700 px-6 py-2 rounded-sm font-medium">
+        <Link to="/">
+          <ImArrowLeft />
+        </Link>
       </button>
 
       {isLoading && !error && <h4>Loading........</h4>}
       {error && !isLoading && { error }}
 
       {country?.map((country, index) => (
-        <div key={index}>
+        <div key={index} className="py-10">
           <div>
             <img src={country.flags.png} alt="" />
           </div>
