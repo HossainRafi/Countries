@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { apiURL } from "../../util/api";
 import { Link } from "react-router-dom";
 import SearchInput from "../Search/SearchInput";
-
+import FilterCountry from "../FilterCountry/FilterCountry";
 const AllCountries = () => {
   const [countries, setCountries] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -43,6 +43,22 @@ const AllCountries = () => {
     }
   };
 
+  const getCountryByRegion = async (regionName) => {
+    try {
+      const res = await fetch(`${apiURL}/region/${regionName}`);
+
+      if (!res.ok) throw new Error("Failed..........");
+
+      const data = await res.json();
+      setCountries(data);
+
+      setIsLoading(false);
+    } catch (error) {
+      setIsLoading(false);
+      setError(false);
+    }
+  };
+
   useEffect(() => {
     getAllCountries();
   }, []);
@@ -53,7 +69,12 @@ const AllCountries = () => {
         <div className="search">
           <SearchInput onSearch={getCountryByName} />
         </div>
+
+        <div className="filter">
+          <FilterCountry onSelect={getCountryByRegion} />
+        </div>
       </div>
+
       <div className="country__bottom">
         {isLoading && !error && <h4>Loading........</h4>}
         {error && !isLoading && <h4>{error}</h4>}
