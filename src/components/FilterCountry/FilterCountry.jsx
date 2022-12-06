@@ -7,23 +7,16 @@ const FilterCountry = ({ onSelect }) => {
   };
 
   return (
-    <select onChange={selectHandler}>
-      <option className="option">Filter by Region</option>
-      <option className="option" value="Africa">
-        Africa
-      </option>
-      <option className="option" value="America">
-        America
-      </option>
-      <option className="option" value="Asia">
-        Asia
-      </option>
-      <option className="option" value="Europe">
-        Europe
-      </option>
-      <option className="option" value="Oceania">
-        Oceania
-      </option>
+    <select
+      onChange={selectHandler}
+      className="px-4 py-2 font-medium text-xl outline-none bg-gray-400"
+    >
+      <option>Filter By Region</option>
+      <option value="Asia">Asia</option>
+      <option value="Europe">Europe</option>
+      <option value="America">America</option>
+      <option value="Africa">Africa</option>
+      <option value="Oceania">Oceania</option>
     </select>
   );
 };
