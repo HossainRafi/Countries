@@ -142,3 +142,26 @@ button {
   border-radius: 5px;
   margin-bottom: 50px;
 }
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.country__info h3 {
+  color: #fff;
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+}
+
+.country__info-left h5 {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.country__info-left h5 span {
+  color: #fff;
+  opacity: 85%;
+  font-weight: 400;
+}
