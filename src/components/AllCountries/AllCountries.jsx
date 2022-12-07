@@ -74,10 +74,15 @@ const AllCountries = () => {
           <FilterCountry onSelect={getCountryByRegion} />
         </div>
       </div>
-
+      {isLoading && !error && (
+        <h4 className="py-10 text-center text-3xl text-blue-500">
+          Loading........
+        </h4>
+      )}
+      {error && !isLoading && (
+        <h4 className="py-10 text-center text-3xl text-red-500">{error}</h4>
+      )}
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 justify-evenly">
-        {isLoading && !error && <h4>Loading........</h4>}
-        {error && !isLoading && <h4>{error}</h4>}
         {countries?.map((country) => (
           <Link to={`/country/${country.name.common}`}>
             <div className="bg-slate-700 rounded-md text-center hover:scale-105 duration-500  shadow-xl">

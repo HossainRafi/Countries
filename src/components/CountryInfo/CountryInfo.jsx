@@ -41,7 +41,11 @@ const CountryInfo = () => {
         </Link>
       </button>
 
-      {isLoading && !error && <h4>Loading........</h4>}
+      {isLoading && !error && (
+        <h4 className="py-10 text-center text-3xl text-blue-500">
+          Loading........
+        </h4>
+      )}
       {error && !isLoading && { error }}
 
       {country?.map((country, index) => (
@@ -49,7 +53,11 @@ const CountryInfo = () => {
           key={index}
           className="lg:flex gap-20 py-10 justify-center items-center"
         >
-          <img className="w-[250px] lg:w-2/4 py-10" src={country.flags.png} alt="" />
+          <img
+            className="w-[250px] lg:w-2/4 py-10"
+            src={country.flags.png}
+            alt=""
+          />
           <div>
             <h3 className="text-2xl md:text-3xl lg:text-5xl font-bold pb-2 uppercase text-gray-200">
               {country.name.common}
