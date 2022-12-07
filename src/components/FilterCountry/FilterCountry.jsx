@@ -9,7 +9,7 @@ const FilterCountry = ({ onSelect }) => {
   return (
     <select
       onChange={selectHandler}
-      className="py-2 px-2 font-medium text-xl outline-none bg-gray-400"
+      className="px-2 lg:px-4 py-1 lg:py-2 text-lg lg:text-xl font-normal lg:font-medium outline-none bg-gray-400"
     >
       <option>Filter By Region</option>
       <option value="Asia">Asia</option>

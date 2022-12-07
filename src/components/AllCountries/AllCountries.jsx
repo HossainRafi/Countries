@@ -65,12 +65,12 @@ const AllCountries = () => {
 
   return (
     <div>
-      <div className="flex justify-between py-8">
-        <div>
+      <div className="md:flex justify-between text-center py-8">
+        <div className="pb-2 md:pb-0">
           <SearchInput onSearch={getCountryByName} />
         </div>
 
-        <div>
+        <div className="pt-2 md:pt-0">
           <FilterCountry onSelect={getCountryByRegion} />
         </div>
       </div>

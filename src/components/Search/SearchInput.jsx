@@ -12,7 +12,7 @@ const SearchInput = ({ onSearch }) => {
   return (
     <form onSubmit={submitHandler}>
       <input
-        className="px-4 py-2 text-xl font-medium outline-none bg-gray-400 placeholder-slate-600"
+        className="px-2 lg:px-4 py-1 lg:py-2 text-lg lg:text-xl font-normal lg:font-medium outline-none bg-gray-400 placeholder-slate-600"
         type="text"
         placeholder="Enter Country Name"
         value={input}
