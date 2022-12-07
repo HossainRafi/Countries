@@ -4,7 +4,7 @@ import CountryInfo from "./components/CountryInfo/CountryInfo";
 
 function App() {
   return (
-    <div className="bg-slate-800">
+    <div className="min-h-screen bg-slate-800">
       <div className="bg-slate-900">
         <h5 className="text-white text-3xl md:text-4xl font-semibold text-center py-4">Countries</h5>
       </div>

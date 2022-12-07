@@ -80,7 +80,7 @@ const AllCountries = () => {
         {error && !isLoading && <h4>{error}</h4>}
         {countries?.map((country) => (
           <Link to={`/country/${country.name.common}`}>
-            <div className="bg-slate-700 rounded-md text-center hover:scale-105 duration-500">
+            <div className="bg-slate-700 rounded-md text-center hover:scale-105 duration-500  shadow-xl">
               <img
                 className="h-40 w-full rounded-t-md"
                 src={country.flags.png}
