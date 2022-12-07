@@ -34,7 +34,7 @@ const CountryInfo = () => {
   }, [countryName]);
 
   return (
-    <div className="h-screen pt-10">
+    <div className="md:min-h-screen pt-10 px-4 md:px-8">
       <button className="bg-slate-700 px-6 py-2 rounded-sm font-medium">
         <Link to="/">
           <ImArrowLeft />
@@ -45,26 +45,29 @@ const CountryInfo = () => {
       {error && !isLoading && { error }}
 
       {country?.map((country, index) => (
-        <div key={index} className="flex gap-20 py-10 justify-center items-center">
-          <img className="w-2/4 h-80" src={country.flags.png} alt="" />
+        <div
+          key={index}
+          className="lg:flex gap-20 py-10 justify-center items-center"
+        >
+          <img className="w-[250px] lg:w-2/4 py-10" src={country.flags.png} alt="" />
           <div>
-            <h3 className="text-5xl font-bold pb-2 uppercase text-gray-200">
+            <h3 className="text-2xl md:text-3xl lg:text-5xl font-bold pb-2 uppercase text-gray-200">
               {country.name.common}
             </h3>
-            <h5 className="text-3xl font-semibold py-2 text-gray-400">
+            <h5 className="text-xl md:text-2xl lg:text-3xl font-semibold py-2 text-gray-400">
               Population:{" "}
               <span className="font-normal">
                 {new Intl.NumberFormat().format(country.population)}
               </span>
             </h5>
-            <h5 className="text-3xl font-semibold py-2 text-gray-400">
+            <h5 className="text-xl md:text-2xl lg:text-3xl font-semibold py-2 text-gray-400">
               Region: <span className="font-normal">{country.region}</span>
             </h5>
-            <h5 className="text-3xl font-semibold py-2 text-gray-400">
+            <h5 className="text-xl md:text-2xl lg:text-3xl font-semibold py-2 text-gray-400">
               Sub Region:{" "}
               <span className="font-normal">{country.subregion}</span>
             </h5>
-            <h5 className="text-3xl font-semibold py-2 text-gray-400">
+            <h5 className="text-xl md:text-2xl lg:text-3xl font-semibold py-2 text-gray-400">
               Capital: <span className="font-normal">{country.capital}</span>
             </h5>
           </div>
